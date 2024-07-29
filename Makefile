@@ -2,6 +2,10 @@
 install:
 	poetry install
 
+# Run linter
+lint:
+	poetry run flake8 brain_games
+
 # Build the source and wheels archives
 build:
 	poetry build
