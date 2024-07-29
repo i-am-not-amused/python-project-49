@@ -15,7 +15,7 @@ publish: install build
 	poetry publish --dry-run
 
 # Install package
-package-install:
+package-install: install build
 	python3 -m pip install --user dist/*.whl
 
 
