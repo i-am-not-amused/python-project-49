@@ -1,6 +1,7 @@
 import random
 
-import prompt
+from brain_games.cli import get_user_input
+
 
 MAX_QUESTION_COUNT = 3
 
@@ -30,7 +31,7 @@ def new_question():
     """Ask question, check user answer and return the result."""
     number, correct_answer = generate_question()
     print(f"Question: {number}")
-    user_answer = prompt.string("Your answer: ")
+    user_answer = get_user_input("Your answer:")
     return check_answer(user_answer, correct_answer)
 
 
