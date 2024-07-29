@@ -20,7 +20,7 @@ def check_answer(user: str, correct: str) -> bool:
     """Checks if user answer is correct and shows appropriate message."""
     is_correct = user == correct
     if is_correct:
-        print("Correct")
+        print("Correct!")
     else:
         print(f"{user!r} is wrong answer ;(. Correct answer was {correct!r}.")
     return is_correct
