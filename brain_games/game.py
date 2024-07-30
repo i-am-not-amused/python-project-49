@@ -2,6 +2,7 @@ from brain_games.cli import get_user_input, welcome_user
 from brain_games.generators.calc import generate_expression
 from brain_games.generators.even import generate_number
 from brain_games.generators.gcd import generate_gcd
+from brain_games.generators.progression import generate_progression
 
 MAX_QUESTION_COUNT = 3
 
@@ -22,6 +23,10 @@ def start_game(game_name: str | None = None):
             init_msg = "Find the greatest common divisor of given numbers."
             numeric_input = True
             generator = generate_gcd
+        case "progression":
+            init_msg = "What number is missing in the progression?"
+            numeric_input = True
+            generator = generate_progression
         case _:
             return
 
