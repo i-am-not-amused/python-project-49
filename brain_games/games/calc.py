@@ -1,6 +1,7 @@
 import random
 
 from brain_games.cli import get_user_input
+from brain_games.game import check_answer
 
 MAX_QUESTION_COUNT = 3
 
@@ -19,15 +20,6 @@ def generate_question() -> tuple[str, int]:
     expression = f"{num1} {op} {num2}"
     answer = operations[op](num1, num2)
     return expression, answer
-
-
-def check_answer(user: str | int, correct: str | int) -> bool:
-    is_correct = user == correct
-    if is_correct:
-        print("Correct!")
-    else:
-        print(f"{user!r} is wrong answer ;(. Correct answer was {correct!r}.")
-    return is_correct
 
 
 def new_question():
