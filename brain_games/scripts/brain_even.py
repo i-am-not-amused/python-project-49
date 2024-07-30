@@ -1,10 +1,9 @@
-from brain_games.cli import welcome_user
-from brain_games.games.even import start_game
+#!/usb/bin/env python3
+from brain_games.game import start_game
 
 
 def main():
-    name = welcome_user()
-    start_game(name)
+    start_game(game_name="even")
 
 
 if __name__ == '__main__':
