@@ -2,6 +2,7 @@ from brain_games.cli import get_user_input, welcome_user
 from brain_games.generators.calc import generate_expression
 from brain_games.generators.even import generate_number
 from brain_games.generators.gcd import generate_gcd
+from brain_games.generators.prime import generate_prime
 from brain_games.generators.progression import generate_progression
 
 MAX_QUESTION_COUNT = 3
@@ -14,7 +15,8 @@ def start_game(game_name: str | None = None):
     match game_name:
         case "even":
             generator = generate_number
-            init_msg = "Answer \"yes\" if the number is even, otherwise answer \"no\"."
+            init_msg = ("Answer \"yes\" if the number is even, "
+                        "otherwise answer \"no\".")
         case "calc":
             init_msg = "What is the result of the expression?"
             numeric_input = True
@@ -27,6 +29,10 @@ def start_game(game_name: str | None = None):
             init_msg = "What number is missing in the progression?"
             numeric_input = True
             generator = generate_progression
+        case "prime":
+            init_msg = ("Answer \"yes\" if given number is prime. "
+                        "Otherwise answer \"no\".")
+            generator = generate_prime
         case _:
             return
 
