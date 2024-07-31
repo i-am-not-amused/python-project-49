@@ -1,9 +1,9 @@
 #!/usb/bin/env python3
-from brain_games.game import start_game
+from brain_games.game import start_game, GameType
 
 
 def main():
-    start_game(game_name="progression")
+    start_game(game_name=GameType.progression)
 
 
 if __name__ == '__main__':

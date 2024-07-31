@@ -1,5 +1,8 @@
 import random
 
+init_msg = "Answer \"yes\" if given number is prime. Otherwise answer \"no\"."
+numeric_input = False
+
 
 def is_prime(number: int) -> bool:
     if number < 2:
@@ -10,7 +13,7 @@ def is_prime(number: int) -> bool:
     return True
 
 
-def generate_prime():
+def generate_question():
     number = random.randint(1, 100)
     answer = "yes" if is_prime(number) else "no"
     return number, answer

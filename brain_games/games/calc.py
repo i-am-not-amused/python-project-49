@@ -1,5 +1,8 @@
 import random
 
+init_msg = "What is the result of the expression?"
+numeric_input = True
+
 operations = {
     "+": lambda x, y: x + y,
     "-": lambda x, y: x - y,
@@ -7,7 +10,7 @@ operations = {
 }
 
 
-def generate_expression() -> tuple[str, int]:
+def generate_question() -> tuple[str, int]:
     """Generate expression and correct answer for it."""
     num1 = random.randint(1, 25)
     num2 = random.randint(1, 25)
