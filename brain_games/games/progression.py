@@ -1,14 +1,19 @@
 import random
 
 
-init_msg = "What number is missing in the progression?"
-numeric_input = True
+INIT_MSG = "What number is missing in the progression?"
+NUMERIC_INPUT = True
+
+_PROG_MIN_RANDOM = 1
+_PROG_MAX_RANDOM = 50
+_COUNT_MIN_RANDOM = 5
+_COUNT_MAX_RANDOM = 10
 
 
 def get_sequence():
-    start = random.randint(1, 50)
-    step = random.randint(1, 10)
-    count = random.randint(5, 10)
+    start = random.randint(_PROG_MIN_RANDOM, _PROG_MAX_RANDOM)
+    step = random.randint(_PROG_MIN_RANDOM, _PROG_MAX_RANDOM)
+    count = random.randint(_COUNT_MIN_RANDOM, _COUNT_MAX_RANDOM)
     stop = count * step + start
     return list(range(start, stop, step))
 

@@ -35,11 +35,11 @@ def start_game(game_name: str | None = None):
 
 
 def run(user_name: str, game):
-    print(game.init_msg)
+    print(game.INIT_MSG)
     for _ in range(MAX_QUESTION_COUNT):
         number, correct_answer = game.generate_question()
         print(f"Question: {number}")
-        user_answer = get_user_input("Your answer:", numeric=game.numeric_input)
+        user_answer = get_user_input("Your answer:", numeric=game.NUMERIC_INPUT)
         result = check_answer(user_answer, correct_answer)
         if not result:
             print(f"Let's try again, {user_name}!")

@@ -1,7 +1,10 @@
 import random
 
-init_msg = "Find the greatest common divisor of given numbers."
-numeric_input = True
+INIT_MSG = "Find the greatest common divisor of given numbers."
+NUMERIC_INPUT = True
+
+_GCD_MIN_RANDOM = 1
+_GCD_MAX_RANDOM = 100
 
 
 def get_gcd(a: int, b: int):
@@ -16,7 +19,7 @@ def get_gcd(a: int, b: int):
 def generate_question():
     num1, num2, gcd = 0, 0, 0
     while gcd < 2:
-        num1 = random.randint(1, 100)
-        num2 = random.randint(1, 100)
+        num1 = random.randint(_GCD_MIN_RANDOM, _GCD_MAX_RANDOM)
+        num2 = random.randint(_GCD_MIN_RANDOM, _GCD_MAX_RANDOM)
         gcd = get_gcd(num1, num2)
     return f"{num1} {num2}", gcd
